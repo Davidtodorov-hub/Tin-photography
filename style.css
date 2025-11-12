@@ -188,20 +188,6 @@ p{ margin:0 0 12px; color:var(--muted); }
   .hero-photo img{ max-width: 420px; }
 }
 
-/* Make 2 photos per row on tablets + big phones */
-@media (max-width: 1100px){
-  .grid{
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;              /* smaller gap makes images larger */
-  }
-}
-
-/* Make 1 photo per row on very small phones */
-@media (max-width: 550px){
-  .grid{
-    grid-template-columns: 1fr;
-  }
-}
 
 
 /* =========================================================
@@ -236,6 +222,20 @@ p{ margin:0 0 12px; color:var(--muted); }
   box-shadow: 0 6px 20px rgba(0,0,0,0.4);
 }
 
+/* Make 2 photos per row on tablets + big phones */
+@media (max-width: 1100px){
+  .grid{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;              /* smaller gap makes images larger */
+  }
+}
+
+/* Make 1 photo per row on very small phones */
+@media (max-width: 550px){
+  .grid{
+    grid-template-columns: 1fr;
+  }
+}
 /* Orientation helpers (if you want to use them later) */
 .square{ aspect-ratio: 1 / 1; }
 .landscape{ aspect-ratio: 4 / 3; }
