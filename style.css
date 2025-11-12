@@ -1,0 +1,337 @@
+/* =========================================================
+   TIN PHOTOGRAPHY — GLOBAL STYLES
+   ========================================================= */
+
+/* ----- CSS Variables / Design Tokens ----- */
+:root{
+  --bg:#0e0f11;
+  --text:#e9e9ee;
+  --muted:#a6a7ab;
+  --maxw: 1000px;
+}
+
+/* ----- Resets & Base ----- */
+*{ box-sizing:border-box; }
+html, body{
+  margin:0; padding:0;
+  background:var(--bg); color:var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1{ margin:0 0 6px; }
+p{ margin:0 0 12px; color:var(--muted); }
+
+/* ----- Generic Layout Helpers ----- */
+.container{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.container-wide{
+  max-width: 1400px;            /* wider for photos page */
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.section{ margin: 40px 0; }
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+.site-nav{
+  position: sticky; top: 0; z-index: 50;
+  background: #141518;
+  border-bottom: 1px solid #222;
+  backdrop-filter: saturate(140%) blur(6px);
+}
+.nav-inner{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.brand{
+  font-weight: 800;
+  letter-spacing: .3px;
+  text-decoration: none;
+  color: var(--text);
+}
+.links{
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0; padding: 0;
+}
+.links a{
+  color: var(--text);
+  text-decoration: none;
+  opacity: .85;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+  transition: opacity .15s ease, border-color .15s ease;
+}
+.links a:hover{
+  opacity: 1;
+  border-bottom-color: rgba(255,255,255,.5);
+}
+.links a.active{
+  opacity: 1;
+  border-bottom-color: var(--text);
+}
+
+/* Mobile navbar */
+@media (max-width:640px){
+  .nav-inner{
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .links{
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+  }
+  .brand{
+    text-align: center;
+    display: block;
+  }
+}
+
+/* =========================================================
+   HERO (HOME PAGE)
+   ========================================================= */
+.hero{
+  background: linear-gradient(135deg, #101114 0%, #16181c 100%);
+  padding: 50px;
+  border-radius: 20px;
+  margin-top: 40px;
+}
+.hero-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  border-radius: 20px;
+}
+.hero-text{ flex: 1; }
+.hero-text h1{
+  font-size: 36px;
+  margin-bottom: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.hero-text p{
+  font-size: 18px;
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.hero-photo{ flex: 1; }
+.hero-photo img{
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 25px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.4);
+  transition: transform .3s ease;
+}
+.hero-photo img:hover{ transform: scale(1.02); }
+
+/* Hero buttons */
+.homepage-buttons{ display: flex; flex-wrap: wrap; align-items: center; }
+
+.book-button,
+.view-work-button,
+.portfolio-button{
+  display: inline-block;
+  background: var(--text);
+  color: var(--bg);
+  padding: 10px 18px;
+  margin-right: 12px;
+  margin-top: 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform .15s ease, opacity .15s ease, background-color .4s ease;
+}
+.book-button:hover,
+.view-work-button:hover,
+.portfolio-button:hover{
+  opacity: 0.95;
+  transform: scale(1.05);
+  background-color: rgb(170, 220, 236);
+}
+.book-button:active,
+.view-work-button:active,
+.portfolio-button:active{
+  background-color: rgb(192, 252, 252);
+}
+
+/* Stack hero on mobile */
+@media (max-width: 900px){
+  .hero-container{
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-text p{ margin-left:auto; margin-right:auto; }
+  .hero-photo img{ max-width: 420px; }
+}
+
+/* =========================================================
+   HOMEPAGE GALLERY (FEATURED)
+   ========================================================= */
+.gallery{
+  max-width: var(--maxw);
+  margin: 80px auto;
+  padding: 0 16px;
+}
+.gallery h2{
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 24px;
+  color: var(--text);
+}
+.grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+.grid img{
+  width: 100%; height: 100%;
+  object-fit: cover;
+  aspect-ratio: 3 / 4;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.grid img:hover{
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+/* Orientation helpers (if you want to use them later) */
+.square{ aspect-ratio: 1 / 1; }
+.landscape{ aspect-ratio: 4 / 3; }
+.portrait{ aspect-ratio: 3 / 4; }
+
+/* =========================================================
+   ALL PHOTOS PAGE
+   ========================================================= */
+
+/* Header centred */
+.page-header-section{
+  text-align: center;
+  margin: 40px 0 24px;
+}
+.page-header-section h1{
+  font-size: 32px;
+  margin-bottom: 6px;
+}
+.page-header-section p{
+  margin: 0;
+  color: var(--muted);
+}
+
+/* Filter bar */
+.filter-bar{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 0 32px;
+}
+.filter-btn{
+  background: #2a2c31; color: var(--text);
+  border: none; padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer; font-weight: 600;
+  transition: transform .15s ease, opacity .15s ease, background-color .2s ease; 
+}
+.filter-btn:hover{ 
+  transform: translateY(-1px); opacity:.95; 
+}
+
+/* Brand sections – each brand on its own block */
+.brand-section{
+  margin: 56px 0;
+}
+.brand-section:not(:last-child){
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding-bottom: 40px;
+}
+
+.brand-title{
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 0.4px;
+}
+
+/* 4–5 photos per row depending on screen width */
+.brand-grid{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+}
+
+/* responsive like your homepage gallery */
+@media (max-width: 900px){
+  .brand-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px){
+  .brand-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card wrapper */
+.photo-card{
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.photo-card:hover{
+  transform: scale(1.02);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+.photo-card img{
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Orientation helpers for cards */
+.photo-card.landscape { 
+  aspect-ratio: 4 / 3;   /* wide */
+}
+.photo-card.portrait { 
+  aspect-ratio: 3 / 4;   /* tall */
+}
+.photo-card.square {
+  aspect-ratio: 1 / 1;   /* optional */
+}
+
+.photo-tag{
+  position: absolute;
+  left: 10px; top: 10px;
+  font-size: 12px;
+  padding: 4px 8px;
+  background: rgba(0,0,0,0.55);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 999px;
+}
+
+/* =========================================================
+   MISC
+   ========================================================= */
+html{ scroll-behavior: smooth; }

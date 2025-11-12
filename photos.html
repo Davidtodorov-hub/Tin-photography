@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>All Photos — Tin Photography</title>
+  <meta name="description" content="All automotive photos by Finn — browse by brand: Ferrari, McLaren, Porsche, Lamborghini, BMW and more.">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =====================================================
+       NAVBAR
+       ===================================================== -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">Tin Photography</a>
+      <ul class="links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#gallery">Featured Photos</a></li>
+        <li><a class="active" href="photos.html">All Photos</a></li>
+        <li><a href="index.html#booking">Book</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- =====================================================
+       PAGE HEADER + FILTERS
+       ===================================================== -->
+  <main class="container-wide">
+    <header class="page-header-section">
+      <h1>All Photos</h1>
+      <p>Browse by brand</p>
+    </header>
+
+    <nav class="filter-bar">
+      <!-- JS later will use data-filter to show/hide sections -->
+      <button class="filter-btn" data-filter="ferrari">Ferrari</button>
+      <button class="filter-btn" data-filter="mclaren">McLaren</button>
+      <button class="filter-btn" data-filter="porsche">Porsche</button>
+      <button class="filter-btn" data-filter="lamborghini">Lamborghini</button>
+      <button class="filter-btn" data-filter="bmw">BMW</button>
+    </nav>
+
+    <!-- =====================================================
+         BRAND SECTIONS – EACH BRAND ON ITS OWN LINE
+         ===================================================== -->
+
+    <!-- FERRARI -->
+    <section class="brand-section" data-brand="ferrari">
+      <h2 class="brand-title">Ferrari</h2>
+      <div class="brand-grid">
+        <figure class="photo-card portrait">
+          <img src="photos/Ferrari/f1.jpeg" alt="Ferrari 488 Pista headlight" loading="lazy">
+          <figcaption class="photo-tag">Ferrari</figcaption>
+        </figure>
+
+        <!-- duplicate here just as example; swap to f2, f3 etc -->
+        <figure class="photo-card portrait">
+          <img src="photos/Ferrari/f1.jpeg" alt="Ferrari 488 Pista headlight" loading="lazy">
+          <figcaption class="photo-tag">Ferrari</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- BMW -->
+    <section class="brand-section" data-brand="bmw">
+      <h2 class="brand-title">BMW</h2>
+      <div class="brand-grid">
+        <figure class="photo-card portrait">
+          <img src="photos/Bmw/b1.jpeg" alt="BMW M4 Competition badge close-up" loading="lazy">
+          <figcaption class="photo-tag">BMW</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- LAMBORGHINI -->
+    <section class="brand-section" data-brand="lamborghini">
+      <h2 class="brand-title">Lamborghini</h2>
+      <div class="brand-grid">
+        <figure class="photo-card landscape">
+          <img src="photos/Lamborghini/l1-fullbody-lanscape.jpeg" alt="Lamborghini Revuelto full body" loading="lazy">
+          <figcaption class="photo-tag">Lamborghini</figcaption>
+        </figure>
+
+        <figure class="photo-card landscape">
+          <img src="photos/Lamborghini/l2-interior-lanscape.jpeg" alt="Lamborghini Revuelto interior" loading="lazy">
+          <figcaption class="photo-tag">Lamborghini</figcaption>
+        </figure>
+
+        <figure class="photo-card portrait">
+          <img src="photos/Lamborghini/l3-wheel-portrait.jpeg" alt="Lamborghini STO wheel" loading="lazy">
+          <figcaption class="photo-tag">Lamborghini</figcaption>
+        </figure>
+
+        <figure class="photo-card portrait">
+          <img src="photos/Lamborghini/l4-exhaust-portrait.jpeg" alt="Lamborghini Revuelto exhaust" loading="lazy">
+          <figcaption class="photo-tag">Lamborghini</figcaption>
+        </figure>
+
+        <figure class="photo-card portrait">
+          <img src="photos/Lamborghini/l5-headlight-portrait.jpeg" alt="Lamborghini Countach headlight" loading="lazy">
+          <figcaption class="photo-tag">Lamborghini</figcaption>
+        </figure>
+
+        <figure class="photo-card portrait">
+          <img src="photos/Lamborghini/l6-interior-portrait.jpeg" alt="Lamborghini interior detail" loading="lazy">
+          <figcaption class="photo-tag">Lamborghini</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- MCLAREN -->
+    <section class="brand-section" data-brand="mclaren">
+      <h2 class="brand-title">McLaren</h2>
+      <div class="brand-grid">
+        <figure class="photo-card portrait">
+          <img src="photos/Mclaren/m1.jpeg" alt="McLaren 570S on the street" loading="lazy">
+          <figcaption class="photo-tag">McLaren</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- PORSCHE -->
+    <section class="brand-section" data-brand="porsche">
+      <h2 class="brand-title">Porsche</h2>
+      <div class="brand-grid">
+        <figure class="photo-card landscape">
+          <img src="photos/Porsche/p1.jpeg" alt="Porsche GT3 RS side profile" loading="lazy">
+          <figcaption class="photo-tag">Porsche</figcaption>
+        </figure>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>
